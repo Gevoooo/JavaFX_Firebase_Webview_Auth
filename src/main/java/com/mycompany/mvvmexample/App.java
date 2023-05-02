@@ -18,13 +18,15 @@ public class App extends Application {
     public static Firestore fstore;
     public static FirebaseAuth fauth;
     public static Scene scene;
+    public static String username;
+    public static String password;
     private final FirestoreContext contxtFirebase = new FirestoreContext();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         fstore = contxtFirebase.firebase();
         fauth = FirebaseAuth.getInstance();
-        scene = new Scene(loadFXML("AccessFBView.fxml"));
+        scene = new Scene(loadFXML("SignUp.fxml"));
         primaryStage.setScene(scene);
         primaryStage.show();
 
